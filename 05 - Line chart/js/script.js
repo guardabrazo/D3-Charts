@@ -140,17 +140,36 @@ var line = d3.svg.line()
   .x(function(d) { return xScale(d.x); })
   .y(function(d) { return -yScale(d.y); });
 
-g.append("path")
+var path = g.append("path")
   .attr("d", line(data));
+
+var totalLength = path.node().getTotalLength();
+
+  path.attr("stroke-dasharray", totalLength + " " + totalLength)
+    .attr("stroke-dashoffset", totalLength)
+    .transition()
+      .duration(1000)
+      .ease("cubic-in-out")
+      .attr("stroke-dashoffset", 0);
 
 svg.selectAll(".dot")
   .data(data)
   .enter().append("circle")
+  .attr("opacity", 0)
+  // .transition().delay(1000).duration(500)
+  .attr("opacity", 1)
   .attr("class", "dot")
   .attr("r", 3.5)
+  .attr("cx", function(d) {
+    return xScale(d.x);
+  })
+  .attr("cy", height - marginY)
+  .transition().duration(1000)
   .attr("cx", function(d) {
     return xScale(d.x);
   })
   .attr("cy", function(d) {
     return height - yScale(d.y);
   });
+
+
