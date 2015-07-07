@@ -1,0 +1,32 @@
+path {
+  stroke: steelblue;
+  stroke-width: 3;
+  fill: none;
+}
+
+line {
+  stroke: black;
+}
+
+xLabel {
+}
+
+yLabel {
+}
+
+.xGrid {
+  stroke: lightgray;
+  display: none;
+}
+.yGrid {
+  stroke: lightgray;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 9pt;
+}
+
+.dot {
+  fill: lightblue;
+}
