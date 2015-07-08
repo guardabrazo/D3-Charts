@@ -1,0 +1,32 @@
+
+
+line {
+  stroke: black;
+}
+
+xLabel {
+}
+
+yLabel {
+}
+
+.xGrid {
+  stroke: lightgray;
+}
+.yGrid {
+  stroke: lightgray;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 9pt;
+}
+
+.dot {
+  fill: lightblue;
+}
+
+.area {
+  fill: lightblue;
+  stroke: none;
+}

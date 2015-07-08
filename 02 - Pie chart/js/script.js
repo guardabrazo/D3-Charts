@@ -42,6 +42,7 @@ var chart = svg.selectAll("path")
   .data(pie(dataset))
   .enter()
   .append("path")
+  .attr("class", "path")
   .attr("d", arc)
   .attr("fill", function(d, i) {
     return color(d.data.label);
